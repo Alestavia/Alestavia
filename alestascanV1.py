@@ -17,7 +17,7 @@ class TerminalColors:
 def print_emoji(text, emoji):
     print(f"{TerminalColors.OKGREEN}{emoji} {text} {emoji}{TerminalColors.ENDC}")
 
-# ASCII Sanatı (ALESTASCAN) - Daha sade ve mobil uyumlu
+# ASCII Sanatı (ALESTA) - Düzgün ve sade
 def ascii_art():
     print(f"""
 {TerminalColors.HEADER}{TerminalColors.WARNING}
@@ -44,7 +44,8 @@ def show_menu():
     2) ⚡ Hızlı Port Taraması
     3) 🧑‍💻 Versiyon Bilgisi
     4) 🖥️ Sistem Durumu
-    5) ❌ Çıkış{TerminalColors.ENDC}
+    5) 🌐 Sosyal Medya Hesaplarımız
+    6) ❌ Çıkış{TerminalColors.ENDC}
     """)
 
 def check_and_install(command, emoji):
@@ -88,6 +89,15 @@ def system_status():
     execute_command("top -n 1")
     input(f"{TerminalColors.OKBLUE}Devam etmek için Enter'a basın...{TerminalColors.ENDC}")
 
+def social_media():
+    print(f"""
+{TerminalColors.OKGREEN}Sosyal Medya Hesaplarımız:
+{TerminalColors.OKBLUE}Instagram: @alesta.coding
+Telegram: @t.me/alesta144
+{TerminalColors.ENDC}
+    """)
+    input(f"{TerminalColors.OKBLUE}Devam etmek için Enter'a basın...{TerminalColors.ENDC}")
+
 def main():
     while True:
         clear_screen()  # Ekranı her menüye girişte temizle
@@ -109,6 +119,8 @@ def main():
         elif islemno == "4":
             system_status()
         elif islemno == "5":
+            social_media()  # Sosyal medya kısmını ekledim
+        elif islemno == "6":
             print_emoji("Çıkılıyor... 🙏", "❌")
             time.sleep(2)
             break
